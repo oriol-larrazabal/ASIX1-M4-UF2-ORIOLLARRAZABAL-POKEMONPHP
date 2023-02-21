@@ -1,11 +1,11 @@
 <?php
-$Charmander=$_POST["Pokémon2"];
+$Charmander=$_POST["Pokemon2"];
+$_SESSION['Charmander']=$Charmander;
 
-if ($Charmander == "Charmander"){
+if (($Charmander=="Charmander")){
     session_start();
-    $_SESSION['PokéOk'] = $Charmander;
+    $_SESSION['Charmander'] = $Charmander;
     header ("location: recepcion2.php");
-    session_destroy();
 }
 else{
     echo "Lo sentimos fallaste. Vuelve a intentarlo.";
@@ -25,9 +25,11 @@ else{
     <title>EL POKÉMON MISTERIOSO</title>
 </head>
 <body>
+<h1>EL POKÉMON MISTERIOSO</h1>
 <p>Hola entrenador Pokémon</p>
 <p>Volviste a acertar. Seguro que has hecho trampas!</p>
 <img class="imagen" src="./img/oak-png.png">
+<br>
 <p>Aquí tienes a Charmander. Seguro que lo elegiste en el Rojo Fuego.</p>
 <img class="imagen" src="./img/charmander-png.png">
 <p>Este Pokémon nace con una llama en la punta de la cola. Si la llama se apagara, el Pokémon se debilitaría.</p>

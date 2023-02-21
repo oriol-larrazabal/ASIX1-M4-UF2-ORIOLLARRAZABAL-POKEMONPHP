@@ -1,8 +1,10 @@
 <?php
-$Pikachu=$_POST["Pokémon1"];
-if ($Pikachu == "Pikachu"){
+$Pikachu=$_POST["Pokemon1"];
+$_SESSION['Pikachu']=$Pikachu;
+
+if ($Pikachu=="Pikachu"){
     session_start();
-    $_SESSION['PokéOk'] = $Pikachu;
+    $_SESSION['Pikachu']="$Pikachu";
     header ("location: recepcion.php");
 }
 else{
@@ -22,9 +24,11 @@ else{
     <link href="estilo.css" rel="stylesheet" type="text/css">
     <title>EL POKÉMON MISTERIOSO</title>
 </head>
+<h1>EL POKÉMON MISTERIOSO</h1>
 <p>Hola entrenador Pokémon.</p>
-<p>Eres increïble. Como lo has acertado?</p>
+<p>Eres increíble. Como lo has acertado?</p>
 <img class="imagen" src="./img/oak-png.png">
+<br>
 <p>Aquí tienes a Pikachu!</p>
 <img class="imagen" src="./img/pikachu-png.png">
 <p>Pokémon ratón. Mantiene su cola en alto para vigilar. Si das un tirón a su cola, querrá morderte.</p>
@@ -34,7 +38,7 @@ else{
 <p>¿Cuál crees qué es el Pokémon?</p>
 <br>
 <label>Introduce el Pokémon</label>
-<input type="text" name="Pokémon2" required>
+<input type="text" name="Pokemon2" placeholder="Pokémon" required>
 <br>
 <button type="submit">ENVIAR LOS DATOS A OAK</button>
 </form>
